@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>hsrediscache</name>
+	<displayName><![CDATA[Hs Redis Cache]]></displayName>
+	<version><![CDATA[1.0]]></version>
+	<description><![CDATA[Utilisez Redis comme serveur de cache pour donner la meilleure performance à votre boutique enligne]]></description>
+	<author><![CDATA[Hachem LATRACH]]></author>
+	<tab><![CDATA[front_office_features]]></tab>
+	<confirmUninstall><![CDATA[Are you sure you want to uninstall this module?]]></confirmUninstall>
+	<is_configurable>1</is_configurable>
+	<need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+</module>

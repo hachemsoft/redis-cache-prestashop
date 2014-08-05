@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>hsrediscache</name>
+	<displayName><![CDATA[Hs Redis Cache]]></displayName>
+	<version><![CDATA[1.0]]></version>
+	<description><![CDATA[Use Redis as cache server to give best performance to your shop]]></description>
+	<author><![CDATA[Hachem LATRACH]]></author>
+	<tab><![CDATA[front_office_features]]></tab>
+	<is_configurable>1</is_configurable>
+	<need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+</module>
