@@ -16,7 +16,7 @@ similar to memcached but more powerful)
 * Install redis server ( check http://redis.io/download ) 
 * clone the project inside your /modules/ 
 
-
+NB : I'am using [Predis PHP Library](https://github.com/nrk/predis) so many thanks to  [Daniele Alessandri](http://twitter.com/JoL1hAHN) 
 
 ## Author
 
