@@ -18,3 +18,10 @@ similar to memcached but more powerful)
 
 
 
+## Author
+
+
+**Hachem LATRACH**  
+
+email: hachem@gmail.com   
+twitter: @hachemsoft
