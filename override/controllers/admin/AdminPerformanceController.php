@@ -53,6 +53,10 @@ class AdminPerformanceController extends AdminPerformanceControllerCore {
 
             $warning_fs = ' ' . sprintf($this->l('(the directory %s must be writable)'), realpath(_PS_CACHEFS_DIRECTORY_));
 
+            $warning_redis = ' ' . $this->l('(you must install the [a]Redis extension[/a])');
+            $warning_redis = str_replace('[a]', '<a href="https://pecl.php.net/package/redis" target="_blank">', $warning_redis);
+            $warning_redis = str_replace('[/a]', '</a>', $warning_redis);
+
             $this->fields_form[6]['form'] = array(
                 'legend' => array(
                     'title' => $this->l('Caching'),
@@ -110,7 +114,7 @@ class AdminPerformanceController extends AdminPerformanceControllerCore {
                             array(
                                 'id' => 'CacheRedis',
                                 'value' => 'CacheRedis',
-                                'label' => $this->l('CacheRedis') . (extension_loaded('redis') ? '' : $warning_xcache)
+                                'label' => $this->l('CacheRedis') . (extension_loaded('redis') ? '' : $warning_redis)
                             ),
                         )
                     ),
