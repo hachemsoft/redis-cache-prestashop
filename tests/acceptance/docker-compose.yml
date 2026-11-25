@@ -1,0 +1,34 @@
+# Throwaway stack for the acceptance test: one PrestaShop version, MySQL, Redis.
+# No host port is published: every check runs from inside the containers.
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: prestashop
+      MYSQL_DATABASE: prestashop
+    tmpfs:
+      - /var/lib/mysql
+
+  redis:
+    image: redis:7-alpine
+
+  shop:
+    image: prestashop/prestashop:${PS_TAG:?set PS_TAG, e.g. 8}
+    depends_on:
+      - db
+      - redis
+    environment:
+      DB_SERVER: db
+      DB_USER: root
+      DB_PASSWD: prestashop
+      DB_NAME: prestashop
+      PS_INSTALL_AUTO: 1
+      PS_DOMAIN: localhost
+      # The PrestaShop 9 installer cannot rename admin/ itself inside the image, and
+      # expects it to be called admin-dev when it is not admin: let the image rename it.
+      PS_FOLDER_ADMIN: admin-dev
+      PS_COUNTRY: FR
+      PS_LANGUAGE: en
+      PS_DEV_MODE: 0
+      ADMIN_MAIL: admin@example.com
+      ADMIN_PASSWD: acceptance-only-password
